@@ -34,5 +34,70 @@ router.get('/student-details/:name', function(req, res){
     
     res.send('Dummy response')
 })
-
+// Problem 1 => solution:
+router.get('/movies', function (req, res) {
+    let movies = ['3Idiots','Dangal','Tare zameen per','pk','Lal singh chaddha','Ghajini']
+    res.send(movies)
+})
+// Problem 2 => solution:
+// router.get('/movies/:indexNumber', function (req, res) {
+//     let movies = ['3Idiots','Dangal','Tare zameen per','pk','Lal singh chaddha','Ghajini']
+//     let requestParams = req.params
+//     //console.log("This is the request "+ JSON.stringify(requestParams))
+//     let movieindexNumber  = requestParams.indexNumber
+//     console.log('Name of the movie is ', movies[movieindexNumber])
+//     // console.log(requestParams)
+//     res.send(movies[movieindexNumber])
+//})
+//Problem 3 => solution:
+router.get('/movies/:indexNumber', function (req, res) {
+    let movies = ['3Idiots','Dangal','Tare zameen per','pk','Lal singh chaddha','Ghajini']
+    let requestParams = req.params
+    let movieindexNumber  = requestParams.indexNumber
+    let index = 0;
+    if(index < movies.length) {   
+        console.log('Name of the movie is ', movies[movieindexNumber])    
+    }else{
+        console.log('Invalid input')
+    }
+    res.send(movies[movieindexNumber])
+})
+//Problem 4 => solution:
+router.get('/films', function (req, res) {
+   let films =[{
+      id: 1,
+      name: 'Lagan'
+   }, {
+      id: 2,
+      name: 'Mohenjo Daro'
+   }, {
+      id: 3,
+      name: 'Shamshera'
+   }, {
+      id: 4,
+      name: 'KGF'
+   }]
+   res.send(films)
+  
+   //Problem 5 => solution:
+   router.get('/films/:filmid', function (req, res) {
+    let films =[{
+        id: 1,
+        name: 'Lagan'
+     }, {
+        id: 2,
+        name: 'Mohenjo Daro'
+     }, {
+        id: 3,
+        name: 'Shamshera'
+     }, {
+        id: 4,
+        name: 'KGF'
+     }]
+     let requestParams = req.params
+     let myfims = requestParams.films.length
+     console.log(myfims)
+     res.sen(myfilms)
+   })
+})
 module.exports = router;
