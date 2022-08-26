@@ -42,6 +42,19 @@ const getUsersData= async function (req, res) {
     res.send({msg: allUsers})
 }
 
+const createUser1 = async function(req, res){
+    let data = req.body
+    req.headers['isFreeAppUser'] = 'false'
+    let userInfo = await UserModel.create(data)
+    res.send({msg:userInfo, status:true})
+}
+
+
+
+
+
 module.exports.createUser= createUser
 module.exports.getUsersData= getUsersData
 module.exports.basicCode= basicCode
+
+module.exports.createUser1 = createUser1
