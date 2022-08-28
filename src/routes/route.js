@@ -62,7 +62,7 @@ router.get("/basicRoute", commonMW.mid1, commonMW.mid2, commonMW.mid3, commonMW.
 
 router.post("/createProduct",ProductController.createProduct)
 router.post("/createUser1", UserMid.isFreeMid, UserController.createUser1)
-router.post("/createOrder", OrderController.createOrder)
+router.post("/createOrder", UserMid.isFreeMid,OrderController.createOrder)
 
 
 module.exports = router;

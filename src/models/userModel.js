@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema( {
     },
     isFreeAppUser:{
         type: Boolean,
-        //default: "false"
+        default: "false"
     }
     
     // isIndian: Boolean,

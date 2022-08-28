@@ -5,7 +5,7 @@ const isFreeMid = function(req, res, next){
     
     return res.send({msg: "isFreeAppUser is mandatory in the hearders"})
 }
-    isfree=req.body["isFreeAppUser"]
+    req.body["isFreeAppUser"]=isfree
     next()
 }
 

@@ -44,7 +44,6 @@ const getUsersData= async function (req, res) {
 
 const createUser1 = async function(req, res){
     let data = req.body
-    req.headers['isFreeAppUser'] = 'false'
     let userInfo = await UserModel.create(data)
     res.send({msg:userInfo, status:true})
 }
