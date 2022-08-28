@@ -1,4 +1,5 @@
 const express = require('express');
+const myUserController = require("../controllers/myUserController");
 const router = express.Router();
 const userController= require("../controllers/userController")
 
@@ -14,5 +15,15 @@ router.post("/login", userController.loginUser)
 router.get("/users/:userId", userController.getUserData)
 
 router.put("/users/:userId", userController.updateUser)
+
+// Assignment 26Aug
+
+router.post("/myUser", myUserController.createNewUser)
+
+router.post("/loginMyUser", myUserController.loginNewUser)
+
+router.get("/getUserDetail", myUserController.getNewUserData)
+
+router.put("/updateUser", myUserController.updateNewUser)
 
 module.exports = router;
