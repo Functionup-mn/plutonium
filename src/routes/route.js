@@ -22,8 +22,8 @@ router.post("/myUser", myUserController.createNewUser)
 
 router.post("/loginMyUser", myUserController.loginNewUser)
 
-router.get("/getUserDetail", myUserController.getNewUserData)
+router.get("/myUser/:usreId", myUserController.getNewUserData)
 
-router.put("/updateUser", myUserController.updateNewUser)
+router.put("/myUser/:usreId", myUserController.updateNewUser)
 
 module.exports = router;
